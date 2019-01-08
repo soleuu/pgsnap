@@ -62,7 +62,7 @@ if (!$rows) {
   exit;
 }
 if ($row = pg_fetch_array($rows)) {
-  $tmp = split("\.", $row['server_version']);
+  $tmp = explode(".", $row['server_version']);
   $g_version = $tmp[0].$tmp[1];
 }
 

@@ -79,7 +79,7 @@ while ($row = pg_fetch_array($rows)) {
              //FOREIGN KEY (categorie) REFERENCES categories(id)
   $replacement = '${1}|${2}|${3}';
   $tmp = preg_replace($pattern, $replacement, $row['condef']);
-  $def = split("\|", $tmp);
+  $def = explode("|", $tmp);
   $buffer .= tr($row['nspname'])."
   <td title=\"".$comments['roles'][$row['tableowner']]."\">".$row['tableowner']."</td>
   <td title=\"".$comments['schemas'][$row['nspname']]."\">".$row['nspname']."</td>

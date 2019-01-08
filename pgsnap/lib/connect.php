@@ -32,7 +32,7 @@ if ($g_passwordrequired && strlen($PGPASSWORD) == 0) {
       $pgpassfile = fopen($pgpassfilename, 'r');
       $found = false;
       while (!$found && $line = fgets($pgpassfile)) {
-        list($host, $port, $database, $user, $password) = split (":", trim($line), 5);
+        list($host, $port, $database, $user, $password) = explode (":", trim($line), 5);
         if ((!strcmp($PGHOST, $host) || !strcmp('*', $host)) &&
             (!strcmp($PGPORT, $port) || !strcmp('*', $port)) &&
             (!strcmp($PGDATABASE, $database) || !strcmp('*', $database)) &&

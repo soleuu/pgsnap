@@ -114,7 +114,7 @@ while ($row = pg_fetch_array($rows)) {
     if (strlen($row['spclocation']) > 0) {
       exec('df -P '.$row['spclocation']." | sed 's/ \+/ /g'", $partitions);
       $partition = $partitions[count($partitions) -1];
-      $infospartition = split (' ', $partition);
+      $infospartition = explode (' ', $partition);
       $message = $infospartition[0]." mounted on ".$infospartition[5].",
 ".$infospartition[3]." free bytes (".$infospartition[4]." free)";
       $buffer .= tr()."

@@ -45,7 +45,7 @@ if (!strcmp($PGHOST, '127.0.0.1') || !strcmp($PGHOST, 'localhost')
 ';
 
     for ($index = 0; $index < count($lines); $index++) {
-      $line = split(':', $lines[$index], 2);
+      $line = explode(':', $lines[$index], 2);
       $buffer .= tr().'
   <td>'.trim($line[0]).'</td>
   <td>'.trim($line[1]).'</td>

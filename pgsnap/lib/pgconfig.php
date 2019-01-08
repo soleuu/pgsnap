@@ -53,7 +53,7 @@ if (!strcmp($PGHOST, '127.0.0.1') || !strcmp($PGHOST, 'localhost')
 ';
 
     for ($index = 0; $index < count($lignes); $index++) {
-      $ligne = split('=', $lignes[$index], 2);
+      $ligne = explode('=', $lignes[$index], 2);
       $buffer .= tr().'
   <td>'.$ligne[0].'</td>
   <td>'.$ligne[1].'</td>

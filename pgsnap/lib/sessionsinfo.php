@@ -33,7 +33,7 @@ if (!$rows) {
 }
 
 while ($row = pg_fetch_array($rows)) {
-  $$row['name'] = $row['setting'];
+  ${$row['name']} = $row['setting'];
 }
 
 $buffer .= "<tr>
